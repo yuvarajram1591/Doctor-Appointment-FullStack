@@ -1,0 +1,82 @@
+/*----------------------- doctor details----------------- */
+.work-container {
+  margin: 50px 369px 0px;
+  text-align: center;
+}
+
+.work-container h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.patient-title {
+  text-align: center;
+  margin: 20px;
+  font-size: 40px;
+}
+
+.doctor-main {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 50px; */
+}
+
+.doctor ul>li {
+  font-size: 18px;
+}
+
+.doctor-img {
+  width: 155px;
+  height: 155px;
+  border-radius: 75%;
+}
+
+.email {
+  font-size: 12px !important;
+}
+
+/*----------------------- patient details----------------- */
+
+.patient-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doctor,
+.patient {
+  margin: 22px 21px;
+}
+
+.doctor-main ul,
+.patient-main ul {
+  width: 225px;
+  list-style: none;
+  border-radius: 10px;
+  padding: 17px 5px;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  transition: all 0.4s;
+  align-items: center;
+}
+
+.doctor-main>.doctor:hover,
+.patient-main>.patient:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.circle {
+  font-size: 30px;
+  border-radius: 50%;
+  background-color: #e6f1f5;
+  padding: 16px;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="homepage.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="doctors.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span>Health</span>
+        <span>Bloom</span>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="homepage.html" id="homepage-link">Home</a>
+          </li>
+          <li>
+            <a href="appointment.html" id="appoinmentpage-link"
+              >Appointments</a
+            >
+          </li>
+          <li><a class="active" href="doctors.html">Doctors</a></li>
+          <li><a href="patient.html">Patient</a></li>
+          <li><a href="about.html">About</a></li>
+          <li onclick="showAppoinmentForm()" class="btn btn-primary">
+            <a>Get Appoinment</a>
+          </li>
+          <li class="profile">
+            <a href="#"><div class="profile-logo"></div></a>
+          </li>
+        </ul>
+        <div class="show-profile">
+          <div class="profile-details">
+            <p class="profile-name">UserName</p>
+            <p class="profile-email">abc@gmail.com</p>
+            <a
+            onclick="sessionStorage.removeItem('data')"
+              class="logout"
+              href="index.html"
+              >Logout</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="work-section">
+      <div class="work-container">
+        <h3 class="patient-title">Doctor List</h3>
+        <div class="doctor-main">
+        </div>
+      </div>
+    </section>
+    <section class="form-section">
+      <div class="form-main-container">
+        <div class="form-container">
+          <header class="form-header">
+            <h1 class="form-heading">New Patient Appoinment Form</h1>
+          </header>
+          <form action="#" id="appoinment-form" name="appoinmentform">
+            <div>
+              <label class="label">FullName</label>
+              <div class="input-box input-fulname">
+                <div>
+                  <input
+                    type="text"
+                    id="userfirstname"
+                    name="first_name"
+                    placeholder="John "
+                  />
+                  <label class="label-secondary" for="username"
+                    >First Name</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="userlastname"
+                    name="last_name"
+                    placeholder="Smith"
+                  />
+                  <label class="label-secondary" for="username"
+                    >Last Name</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="input-box">
+              <div>
+                <label class="label" for="useremail">Email Address</label>
+                <input
+                  type="email"
+                  id="useremail"
+                  name="email_id"
+                  placeholder="my@example.com"
+                />
+              </div>
+              <div>
+                <label class="label" for="usernumber">Phone No</label>
+                <input
+                  type="text"
+                  id="usernumber"
+                  name="phone_number"
+                  placeholder=" +91 00000 00000"
+                />
+              </div>
+            </div>
+            <div class="input-box">
+              <div>
+                <label class="label" for="dob">Date of Birth</label>
+                <input
+                  type="date"
+                  id="userdob"
+                  name="date_of_birth"
+                  placeholder="Date of birth"
+                />
+              </div>
+              <div class="input-field">
+                <label class="label">Gender</label>
+                <div class="gender">
+                  <div>
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="Male"
+                      id="gen1"
+                    /><label for="gen1">Male</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="Female"
+                      id="gen2"
+                    /><label for="gen2">Female</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="label">Address</label>
+              <div class="address">
+                <input type="text" name="address" placeholder=" House No.." />
+                <!-- <input type="text" name="searchTxt" placeholder="Street Address" />
+                <input class="address-input" name="searchTxt" type="text" placeholder="City" />
+                <input
+                  class="address-input"
+                  type="text"
+                  name="searchTxt"
+                  placeholder="District"
+                />
+                <input
+                  class="address-input"
+                  type="text"
+                  name="searchTxt"
+                  placeholder="State / Province"
+                />
+                <input
+                  class="address-input"
+                  type="text"
+                  name="searchTxt"
+                  placeholder="Postal /Zip Code"
+                /> -->
+              </div>
+            </div>
+            <div class="input-box">
+              <div class="input-field">
+                <label class="label" for="doctor"
+                  >Which medical department do you Want?</label
+                >
+
+                <select name="department" id="category-list">  
+                  <!-- <option value=""> --select category-- </option>   -->
+                </select>
+                
+              </div>
+              <div class="input-field">
+                <label class="label" for="doctor">Specalist Doctors</label>
+
+                <select name="doctor_name" id="doctor">
+                  <!-- <option value=""> --select doctorName-- </option>    -->
+                </select>
+
+              </div>
+            </div>
+            <div class="input-box">
+              <div class="input-field">
+                <label class="label" for="time">Select Time</label>
+                <input type="datetime-local" id="time" name="select_time" />
+              </div>
+              <div>
+                <label class="label" for="">Contact Preference</label>
+                <div class="contact">
+                  <div>
+                    <input type="radio" value="Email" name="contact_preference" id="contact-email"  />
+                    <label class="" for="contact-email">Via Email</label>
+                  </div>
+                  <div>
+                    <input type="radio" value="Phone" name="contact_preference" id="contact-phone"  />
+                    <label class="" for="contact-phone">Via Phone</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="check-box-agree">
+              <input type="checkbox" id="chkbox" />
+              <label class="checkbox-label" for="chkbox">
+                I agree to the terms and conditions
+              </label>
+            </div>
+            <div class="footer">
+              <button
+                type="submit"
+                class="button"
+                onclick="submitAppoinmentForm()"
+              >
+                Make Appoinment
+              </button>
+            </div>
+          </form>
+          <div>
+            <button class="btn-close" onclick="formClose()">
+              <svg
+                data-v-6a943414=""
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="close-icon"
+              >
+                <path
+                  d="M6.414 5A1 1 0 1 0 5 6.414L10.586 12 5 17.586A1 1 0 1 0 6.414 19L12 13.414 17.586 19A1 1 0 1 0 19 17.586L13.414 12 19 6.414A1 1 0 1 0 17.586 5L12 10.586 6.414 5Z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
